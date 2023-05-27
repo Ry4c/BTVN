@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Bai 1
+      /*   function check(a){
+            let sum=0;
+            for (let i=0; i< a; i++){
+                if(a%i == 0){
+                    sum += i;
+                }
+            }
+            return sum==a;
+        }
+        function nextPerfectNumber(n){
+            let output= 0;
+            for(let i=n; i; i++){
+                if (check(i)){
+                    output= i;
+                    break;
+                }
+            }
+            return output
+        } */
+       
+        //Bai 2
+       /*  function tim_so_chinh_phuong_gan_nhat(n){
+            let result;
+            for (let i=n; i>0; i--){
+                if(Math.floor(Math.sqrt(i)) === Math.sqrt(i)){
+                    result = i;
+                    break;
+                }
+                 return result;
+            }
+        } */
+       //Bai5   
+      /*  function sap_xep_theo_tu_dien(danh_sach){
+        let newlist=[];
+        for (let i=danh_sach.length-1; i>=0; i--){
+            let first= danh_sach[0];
+            let index= 0;
+            for (let j=0; j<=i; j++){
+                if (first>danh_sach[j]){
+                    first= danh_sach[j];
+                    index  =j;
+                }
+            }
+            newlist.push(first);
+            danh_sach.splice(index,1);
+        }
+        return newlist;
+       } */
+
+       // Bai 6
+       function checkIfArmstrong(number) {
+            let sum = 0;
+            let digits = number.toString().length;
+            let temp = number;
+
+            while (temp > 0) {
+                let lastDigit = temp % 10;
+                sum = sum + lastDigit ** digits;
+
+                temp = parseInt(temp / 10);
+            }
+
+            return sum == number;
+
+        }
+        tim_so_amstrong_trong_khoang(start, end){
+            for (let i=start; i<=end; i++){
+                if (checkIfArmstrong(i)){
+                    console.log(i);
+                }
+            }
+        }
+        console.log(sap_xep_theo_tu_dien(['avqwr','acbưbr','fvbq','fgbg','bqbwt','babqw'])); 
+    </script>
+</body>
+</html>
