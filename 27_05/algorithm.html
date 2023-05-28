@@ -68,21 +68,83 @@
             while (temp > 0) {
                 let lastDigit = temp % 10;
                 sum = sum + lastDigit ** digits;
-
                 temp = parseInt(temp / 10);
             }
 
             return sum == number;
 
         }
-        tim_so_amstrong_trong_khoang(start, end){
+        function tim_so_amstrong_trong_khoang(start, end){
             for (let i=start; i<=end; i++){
                 if (checkIfArmstrong(i)){
                     console.log(i);
                 }
             }
         }
-        console.log(sap_xep_theo_tu_dien(['avqwr','acbưbr','fvbq','fgbg','bqbwt','babqw'])); 
+
+        // Bai 7
+        function tinh_tong_chu_so(chuoi){
+            let sum = 0;
+            for (let i=0; i<chuoi.length; i++){
+                sum += parseInt(chuoi[i]);
+            }
+            return sum
+        }
+
+        // Bai 4
+        function kiem_tra_dãy_fibonacci(chuoi){
+            let flag = true
+            for (let i=0; i<chuoi.length-3 ; i++){
+                if (parseInt(chuoi[i])+parseInt(chuoi[i+1]) == parseInt(chuoi[i+2])){
+                    continue;
+                }else{
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        // Bai 3
+        
+        function kiem_tra_snt(n) {
+            var flag = true;
+            if (n < 2){
+                flag = false;
+            }
+            else{
+                for (var i = 2; i < n-1; i++)
+                {
+                    if (n % i == 0){
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+            return flag;
+        }
+        function tim_so_nguyen_to_lon_nhat(danh_sach){
+            let max;
+            while(max = undefined){
+                for (let i=0; i<danh_sach.length; i++){
+                    if (kiem_tra_snt){
+                        max= danh_sach[i];
+                    }
+                }
+            }
+            for (let i=0; i<danh_sach.length; i++){
+                    if (kiem_tra_snt && max < danh_sach[i]){
+                        max= danh_sach[i];
+                    }
+            }
+            if (max = undefined){
+                return 'khong co';
+            }else{
+                return max;
+            }
+        }
+
+        console.log(tinh_tong_chu_so('12345')); 
     </script>
 </body>
 </html>
